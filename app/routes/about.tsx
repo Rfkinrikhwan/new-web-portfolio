@@ -18,7 +18,7 @@ export default function AboutPage() {
 
             <div className="border my-4 border-dashed" />
 
-            <p className="leading-8">
+            <p className="leading-7">
                 Hi! I am Rifi Nur Ikhwan, a seasoned software engineer with a deep passion for creating elegant and
                 efficient solutions through code. With a strong foundation in JavaScript and TypeScript, along with
                 a comprehensive understanding of various frontend libraries and frameworks, I heve been navigating
@@ -26,23 +26,32 @@ export default function AboutPage() {
                 Medan, Indonesia 🇮🇩.
             </p>
 
-            <p className="mt-5 leading-8">
+            <p className="mt-4 leading-7">
                 As a fast learner and adaptive thinker, I thrive in dynamic environments where innovation is the driving
                 force. My collaborative nature allows me to seamlessly integrate with teams, contributing not only my
                 technical prowess but also a humble attitude that values every members input.
             </p>
 
-            <p className="mt-5 leading-8">
+            <p className="mt-4 leading-7">
                 This blog is my platform to share insights, experiences, and discoveries from my journey as a software engineer.
                 Join me as we delve into the ever-exciting realm of technology, where each line of code has the potential to shape
                 the digital landscape in remarkable ways.
             </p>
 
-            <p className="mt-5 leading-8">
+            <p className="mt-4 leading-7">
                 Thank you for visiting, and I look forward to embarking on this knowledge-sharing adventure
             </p>
 
             <div className="border my-4" />
+
+            <h1 className="text-xl font-bold">Career</h1>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-3">
+                <div className="border rounded-xl h-52"></div>
+                <div className="border rounded-xl h-52"></div>
+                <div className="border rounded-xl h-52"></div>
+                <div className="border rounded-xl h-52"></div>
+            </div>
         </div>
     );
 }
