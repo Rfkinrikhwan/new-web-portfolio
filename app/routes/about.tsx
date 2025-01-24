@@ -45,7 +45,7 @@ export default function AboutPage() {
             <div className="border my-4 border-dashed" />
 
             <p className="leading-7">
-                Hi! I am Rifi Nur Ikhwan, a seasoned software engineer with a deep passion for creating elegant and
+                Hi! I am Rifki Nur Ikhwan, a seasoned software engineer with a deep passion for creating elegant and
                 efficient solutions through code. With a strong foundation in JavaScript and TypeScript, along with
                 a comprehensive understanding of various frontend libraries and frameworks, I heve been navigating
                 the ever-evolving landscape of web development with enthusiasm and dedication. Currently, reside in

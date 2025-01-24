@@ -15,7 +15,7 @@ export default function Index() {
       <div className="flex items-center gap-5 mt-2 text-gray-500">
         <div className="flex items-center gap-2">
           <div className="w-[5px] h-[5px] bg-gray-400 rounded-full" />
-          <p>Remote Worker</p>
+          <p>Web Developer</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -32,13 +32,24 @@ export default function Index() {
 
       <div className="border my-4 border-dashed" />
 
-      <h1 className="text-xl font-bold">Services</h1>
+      <h1 className="text-xl font-bold">Cerficates</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-3">
-        <div className="border rounded-xl h-52"></div>
-        <div className="border rounded-xl h-52"></div>
-        <div className="border rounded-xl h-52"></div>
-        <div className="border rounded-xl h-52"></div>
+        <div className="border rounded-md z-10">
+          <img src="/certificates/sertifikat_1.png" className="w-full rounded-md" alt="" />
+        </div>
+        <div className="border rounded-md z-10">
+          <img src="/certificates/sertifikat_2.png" className="w-full rounded-md" alt="" />
+        </div>
+        <div className="border rounded-md z-10">
+          <img src="/certificates/sertifikat_3.png" className="w-full rounded-md" alt="" />
+        </div>
+        <div className="border rounded-md z-10">
+          <img src="/certificates/sertifikat_4.png" className="w-full rounded-md" alt="" />
+        </div>
+        <div className="border rounded-md z-10">
+          <img src="/certificates/sertifikat_5.png" className="w-full rounded-md" alt="" />
+        </div>
       </div>
 
       <div className="border my-4" />
