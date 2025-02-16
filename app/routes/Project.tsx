@@ -133,11 +133,11 @@ export default function ProjectPage() {
                         <CardHeader>
                             <div className="flex justify-between items-start">
                                 <div className="flex items-center gap-4">
-                                    <img 
+                                    {/* <img 
                                         src={project.logo} 
                                         alt={`${project.title} logo`}
                                         className="w-16 h-16 rounded-lg object-cover"
-                                    />
+                                    /> */}
                                     <div>
                                         <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                                         <CardDescription className="text-sm text-gray-500">
@@ -167,7 +167,7 @@ export default function ProjectPage() {
                 ))}
             </div>
 
-            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+            {/* <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 {selectedProject && (
                     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
                         <DialogHeader>
@@ -241,7 +241,7 @@ export default function ProjectPage() {
                         </div>
                     </DialogContent>
                 )}
-            </Dialog>
+            </Dialog> */}
 
             <div className="mb-48" />
         </div>
