@@ -15,6 +15,7 @@ export default defineConfig({
   },
   plugins: [
     remix({
+      ssr: false,
       presets: [vercelPreset()],
       future: {
         v3_fetcherPersist: true,

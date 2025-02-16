@@ -124,7 +124,7 @@
     },
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
-    "ssr": false
+    "ssr": true
   },
   "viteConfig": {
     "build": {

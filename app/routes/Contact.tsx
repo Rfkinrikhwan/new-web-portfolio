@@ -25,59 +25,12 @@ import { Textarea } from "~/components/ui/textarea";
 import { Button } from "~/components/ui/button";
 import { Github, Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { useActionData, Form } from "@remix-run/react";
-import { ActionFunction } from '@remix-run/node';
 
 export const meta: MetaFunction = () => {
     return [
         { title: "Contact | Rifki" },
         { name: "description", content: "Allo Guys, I'm Rifki" },
     ];
-};
-
-export const action: ActionFunction = async ({ request }): Promise<any> => {
-    const formData = await request.formData();
-    const data: FormData = {
-        name: formData.get("name") as string,
-        email: formData.get("email") as string,
-        subject: formData.get("subject") as string,
-        message: formData.get("message") as string,
-    };
-
-    // Validasi data
-    if (!data.name || !data.email || !data.subject || !data.message) {
-        return json(
-            { success: false, message: "All fields are required" },
-            { status: 400 }
-        );
-    }
-
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        return json(
-            { success: false, message: "Please enter a valid email address" },
-            { status: 400 }
-        );
-    }
-
-    try {
-        // const result = await sendContactEmail(data);
-        
-        // if (!result.success) {
-        //     throw new Error('Failed to send email');
-        // }
-
-        // return json({
-        //     success: true,
-        //     message: "Thank you for your message! I'll get back to you soon."
-        // });
-    } catch (error) {
-        console.error('Error sending email:', error);
-        return json({
-            success: false,
-            message: "Failed to send message. Please try again later."
-        }, { status: 500 });
-    }
 };
 
 const socialLinks: SocialLink[] = [
