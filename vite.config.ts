@@ -10,6 +10,9 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
+  build: {
+    sourcemap: false, // Matikan sourcemaps
+  },
   plugins: [
     remix({
       presets: [vercelPreset()],
