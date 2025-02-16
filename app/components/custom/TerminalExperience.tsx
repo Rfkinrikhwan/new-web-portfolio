@@ -1,4 +1,4 @@
-import { AnimatedSpan, Terminal, TypingAnimation } from "../magicui/terminal";
+import { AnimatedSpan, Terminal, TypingAnimation } from "../ui/terminal";
 
 export default function TerminalExperience() {
     return (

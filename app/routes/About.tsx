@@ -1,7 +1,7 @@
 import { MetaFunction } from "@remix-run/react";
 import { CodeXml } from "lucide-react";
 import TerminalExperience from "~/components/custom/TerminalExperience";
-import { Marquee } from "~/components/magicui/marquee";
+import { Marquee } from "~/components/ui/marquee";
 
 
 export const meta: MetaFunction = () => {
