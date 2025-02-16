@@ -1,0 +1,134 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/Contact": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/Project": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/_index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/About": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/Blog": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {}
+      },
+      "routes/Contact": {
+        "file": "app/routes/Contact.tsx",
+        "id": "routes/Contact",
+        "path": "Contact",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/Project": {
+        "file": "app/routes/Project.tsx",
+        "id": "routes/Project",
+        "path": "Project",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/_index": {
+        "file": "app/routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/About": {
+        "file": "app/routes/About.tsx",
+        "id": "routes/About",
+        "path": "About",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/Blog": {
+        "file": "app/routes/Blog.tsx",
+        "id": "routes/Blog",
+        "path": "Blog",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "remixConfig": {
+    "appDirectory": "/home/rfkinrikhwan/Development/React Project/portfolio-v2/app",
+    "basename": "/",
+    "buildDirectory": "/home/rfkinrikhwan/Development/React Project/portfolio-v2/build",
+    "future": {
+      "v3_fetcherPersist": true,
+      "v3_relativeSplatPath": true,
+      "v3_throwAbortReason": true,
+      "v3_routeConfig": false,
+      "v3_singleFetch": true,
+      "v3_lazyRouteDiscovery": true,
+      "unstable_optimizeDeps": false
+    },
+    "manifest": false,
+    "publicPath": "/",
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/Contact": {
+        "file": "routes/Contact.tsx",
+        "id": "routes/Contact",
+        "path": "Contact",
+        "parentId": "root"
+      },
+      "routes/Project": {
+        "file": "routes/Project.tsx",
+        "id": "routes/Project",
+        "path": "Project",
+        "parentId": "root"
+      },
+      "routes/_index": {
+        "file": "routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root"
+      },
+      "routes/About": {
+        "file": "routes/About.tsx",
+        "id": "routes/About",
+        "path": "About",
+        "parentId": "root"
+      },
+      "routes/Blog": {
+        "file": "routes/Blog.tsx",
+        "id": "routes/Blog",
+        "path": "Blog",
+        "parentId": "root"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": false
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}

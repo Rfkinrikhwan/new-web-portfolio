@@ -11,7 +11,8 @@
     "typecheck": "tsc"
   },
   "remix": {
-    "server": false
+    "server": false,
+    "build": false
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

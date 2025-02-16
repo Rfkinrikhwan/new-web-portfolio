@@ -26,7 +26,6 @@ import { Button } from "~/components/ui/button";
 import { Github, Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { useActionData, Form } from "@remix-run/react";
 import { ActionFunction } from '@remix-run/node';
-import { sendContactEmail } from '~/services/email.server';
 
 export const meta: MetaFunction = () => {
     return [
@@ -35,7 +34,7 @@ export const meta: MetaFunction = () => {
     ];
 };
 
-export const action: ActionFunction = async ({ request }): Promise<Response> => {
+export const action: ActionFunction = async ({ request }): Promise<any> => {
     const formData = await request.formData();
     const data: FormData = {
         name: formData.get("name") as string,
@@ -62,16 +61,16 @@ export const action: ActionFunction = async ({ request }): Promise<Response> => 
     }
 
     try {
-        const result = await sendContactEmail(data);
+        // const result = await sendContactEmail(data);
         
-        if (!result.success) {
-            throw new Error('Failed to send email');
-        }
+        // if (!result.success) {
+        //     throw new Error('Failed to send email');
+        // }
 
-        return json({
-            success: true,
-            message: "Thank you for your message! I'll get back to you soon."
-        });
+        // return json({
+        //     success: true,
+        //     message: "Thank you for your message! I'll get back to you soon."
+        // });
     } catch (error) {
         console.error('Error sending email:', error);
         return json({
