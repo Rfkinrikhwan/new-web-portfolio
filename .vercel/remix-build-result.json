@@ -1,82 +1,40 @@
 {
   "buildManifest": {
-    "serverBundles": {
-      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
-        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
-        "config": {
-          "runtime": "nodejs"
-        }
-      }
-    },
-    "routeIdToServerBundleId": {
-      "routes/Contact": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/Project": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/_index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/About": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/Blog": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/send": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
-    },
     "routes": {
       "root": {
         "path": "",
         "id": "root",
-        "file": "app/root.tsx",
-        "config": {}
+        "file": "root.tsx"
       },
       "routes/Contact": {
-        "file": "app/routes/Contact.tsx",
+        "file": "routes/Contact.tsx",
         "id": "routes/Contact",
         "path": "Contact",
-        "parentId": "root",
-        "config": {
-          "runtime": "nodejs"
-        }
+        "parentId": "root"
       },
       "routes/Project": {
-        "file": "app/routes/Project.tsx",
+        "file": "routes/Project.tsx",
         "id": "routes/Project",
         "path": "Project",
-        "parentId": "root",
-        "config": {
-          "runtime": "nodejs"
-        }
+        "parentId": "root"
       },
       "routes/_index": {
-        "file": "app/routes/_index.tsx",
+        "file": "routes/_index.tsx",
         "id": "routes/_index",
         "index": true,
-        "parentId": "root",
-        "config": {
-          "runtime": "nodejs"
-        }
+        "parentId": "root"
       },
       "routes/About": {
-        "file": "app/routes/About.tsx",
+        "file": "routes/About.tsx",
         "id": "routes/About",
         "path": "About",
-        "parentId": "root",
-        "config": {
-          "runtime": "nodejs"
-        }
+        "parentId": "root"
       },
       "routes/Blog": {
-        "file": "app/routes/Blog.tsx",
+        "file": "routes/Blog.tsx",
         "id": "routes/Blog",
         "path": "Blog",
-        "parentId": "root",
-        "config": {
-          "runtime": "nodejs"
-        }
-      },
-      "routes/send": {
-        "file": "app/routes/send.ts",
-        "id": "routes/send",
-        "path": "send",
-        "parentId": "root",
-        "config": {
-          "runtime": "nodejs"
-        }
+        "parentId": "root"
       }
     }
   },
@@ -130,17 +88,11 @@
         "id": "routes/Blog",
         "path": "Blog",
         "parentId": "root"
-      },
-      "routes/send": {
-        "file": "routes/send.ts",
-        "id": "routes/send",
-        "path": "send",
-        "parentId": "root"
       }
     },
     "serverBuildFile": "index.js",
     "serverModuleFormat": "esm",
-    "ssr": true
+    "ssr": false
   },
   "viteConfig": {
     "build": {
