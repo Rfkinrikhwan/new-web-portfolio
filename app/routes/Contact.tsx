@@ -1,15 +1,3 @@
-interface FormData {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-}
-
-interface ActionData {
-    success: boolean;
-    message: string;
-}
-
 interface SocialLink {
     name: string;
     url: string;
@@ -18,13 +6,9 @@ interface SocialLink {
 }
 
 import React from 'react';
-import { json, MetaFunction } from "@remix-run/react";
-import { Card, CardContent } from "~/components/ui/card";
-import { Input } from "~/components/ui/input";
-import { Textarea } from "~/components/ui/textarea";
-import { Button } from "~/components/ui/button";
+import { MetaFunction } from "@remix-run/react";
 import { Github, Instagram, Linkedin, Mail, Send } from "lucide-react";
-import { useActionData, Form } from "@remix-run/react";
+import SendMessage from '~/components/custom/SendMessage';
 
 export const meta: MetaFunction = () => {
     return [
@@ -61,17 +45,6 @@ const socialLinks: SocialLink[] = [
 ];
 
 export default function ContactPage() {
-    const actionData = useActionData<ActionData>();
-    const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false);
-
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        setIsSubmitting(true);
-        try {
-            await event.currentTarget.submit();
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
 
     return (
         <div className="px-4 sm:px-0 py-10 md:py-14">
@@ -107,87 +80,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Contact Form Section */}
-                <div>
-                    <h2 className="text-2xl font-semibold mb-6">Send Me a Message</h2>
-                    <Card>
-                        <CardContent className="pt-6">
-                            <Form method="post" onSubmit={handleSubmit} className="space-y-4 z-50">
-                                <div className="grid gap-4">
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <div className="space-y-2 z-50">
-                                            <label htmlFor="name" className="text-sm font-medium">
-                                                Name
-                                            </label>
-                                            <Input
-                                                id="name"
-                                                name="name"
-                                                placeholder="John Doe"
-                                                required
-                                            />
-                                        </div>
-                                        <div className="space-y-2 z-50">
-                                            <label htmlFor="email" className="text-sm font-medium">
-                                                Email
-                                            </label>
-                                            <Input
-                                                id="email"
-                                                name="email"
-                                                type="email"
-                                                placeholder="john@example.com"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2 z-50">
-                                        <label htmlFor="subject" className="text-sm font-medium">
-                                            Subject
-                                        </label>
-                                        <Input
-                                            id="subject"
-                                            name="subject"
-                                            placeholder="How can I help you?"
-                                            required
-                                        />
-                                    </div>
-                                    <div className="space-y-2 z-50">
-                                        <label htmlFor="message" className="text-sm font-medium">
-                                            Message
-                                        </label>
-                                        <Textarea
-                                            id="message"
-                                            name="message"
-                                            placeholder="Your message here..."
-                                            className="min-h-[120px]"
-                                            required
-                                        />
-                                    </div>
-                                </div>
-
-                                {actionData?.message && (
-                                    <p className={`text-sm ${actionData.success ? 'text-green-600' : 'text-red-600'}`}>
-                                        {actionData.message}
-                                    </p>
-                                )}
-
-
-                                <Button
-                                    type="submit"
-                                    className="w-full h-10 z-50 relative"
-                                    disabled={isSubmitting}
-                                >
-                                    {isSubmitting ? (
-                                        "Sending..."
-                                    ) : (
-                                        <>
-                                            Send Message
-                                            <Send className="w-4 h-4 ml-2" />
-                                        </>
-                                    )}
-                                </Button>
-                            </Form>
-                        </CardContent>
-                    </Card>
-                </div>
+                <SendMessage/>
             </div>
 
             <div className="mb-48" />

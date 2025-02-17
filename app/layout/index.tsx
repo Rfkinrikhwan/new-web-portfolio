@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Toaster } from 'sonner';
 import { NavigationContainer } from '~/components/custom/ButtonNavigate';
 
 interface LayoutCustomProps {
@@ -12,6 +13,7 @@ export default function LayoutCustom({ children }: LayoutCustomProps) {
       
       {children}
       
+      <Toaster />
       <NavigationContainer />
     </div>
   );
