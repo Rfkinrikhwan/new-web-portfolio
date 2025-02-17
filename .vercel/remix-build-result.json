@@ -14,7 +14,8 @@
       "routes/Project": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/_index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
       "routes/About": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "routes/Blog": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+      "routes/Blog": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/send": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
       "root": {
@@ -63,6 +64,15 @@
         "file": "app/routes/Blog.tsx",
         "id": "routes/Blog",
         "path": "Blog",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/send": {
+        "file": "app/routes/send.ts",
+        "id": "routes/send",
+        "path": "send",
         "parentId": "root",
         "config": {
           "runtime": "nodejs"
@@ -119,6 +129,12 @@
         "file": "routes/Blog.tsx",
         "id": "routes/Blog",
         "path": "Blog",
+        "parentId": "root"
+      },
+      "routes/send": {
+        "file": "routes/send.ts",
+        "id": "routes/send",
+        "path": "send",
         "parentId": "root"
       }
     },

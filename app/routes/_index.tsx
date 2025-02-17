@@ -1,5 +1,6 @@
 import { MetaFunction, useNavigate } from "@remix-run/react";
 import { Download, Mail } from "lucide-react";
+import GitHubCalendar from 'react-github-calendar';
 
 
 export const meta: MetaFunction = () => {
@@ -47,6 +48,12 @@ export default function Index() {
           <Mail size={20} />
           Contact Me
         </button>
+      </div>
+
+      <div className="border my-4 border-dashed" />
+
+      <div className="relative z-50">
+        <GitHubCalendar username="rfkinrikhwan" blockSize={10} colorScheme="light" year={2025}/>
       </div>
 
       <div className="border my-4" />

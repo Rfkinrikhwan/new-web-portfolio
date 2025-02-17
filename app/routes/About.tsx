@@ -60,7 +60,7 @@ export default function AboutPage() {
 
             <h1 className="text-xl font-bold">Experience</h1>
 
-            <div className="mt-2">
+            <div className="mt-2 z-50 relative">
                 <TerminalExperience />
             </div>
 

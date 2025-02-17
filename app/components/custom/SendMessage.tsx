@@ -23,7 +23,7 @@ export default function SendMessage() {
         }
 
         try {
-            const response = await fetch('/api/send', {
+            const response = await fetch('send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export default function SendMessage() {
     }
 
     return (
-        <>
+        <div>
             <h2 className="text-2xl font-semibold mb-6">Send Me a Message</h2>
             <Card>
                 <CardContent className="pt-6">
@@ -125,6 +125,6 @@ export default function SendMessage() {
                     </form>
                 </CardContent>
             </Card>
-        </>
+        </div>
     )
 }

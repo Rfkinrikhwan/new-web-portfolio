@@ -1,10 +1,13 @@
-// app/routes/api.send.tsx
 import { json } from '@remix-run/node'
 import { Resend } from 'resend'
 
-const resend = new Resend("re_MAfcRcAD_LyBnJA374bFvEoExM8Q7Zryu")
+export const loader = async () => {
+  throw json({ message: "Method not allowed" }, { status: 405 });
+};
 
 export async function action({ request }: { request: Request }) {
+  const resend = new Resend("re_MAfcRcAD_LyBnJA374bFvEoExM8Q7Zryu")
+
   if (request.method !== 'POST') {
     return json({ error: 'Method not allowed' }, { status: 405 })
   }
@@ -32,6 +35,6 @@ export async function action({ request }: { request: Request }) {
   }
 }
 
-export default function SendApi() {
-  return null
-}
+export const handle = {
+  spa: true
+};
