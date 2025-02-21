@@ -68,7 +68,7 @@ const projects = [
     },
     {
         title: "Shanrise",
-        description: "A web-based application for police, CPNS, IPDN, and STAN entrance exam simulations.",
+        description: "A web-based application for POLRI, CPNS, IPDN, and STAN entrance exam simulations.",
         technologies: ["React", "TypeScript", "Tailwind", "Vue", "JavaScript", "Bootstrap", "Laravel 11"],
         year: "2024 - 2025",
         type: "Web Application",
@@ -94,6 +94,29 @@ const projects = [
         year: "2025",
         type: "Web Application",
         logo: "/clients/1.png",
+        images: [
+            "/api/placeholder/800/600",
+            "/api/placeholder/800/600",
+            "/api/placeholder/800/600"
+        ],
+        longDescription: `
+            Cabita is a web application designed for photography businesses to efficiently manage service orders and customer data.
+            Key features include:
+            • Order management for photography services
+            • Customer data management
+            • Booking tracking and scheduling
+            • Responsive and user-friendly interface
+        `,
+        challenges: "Creating an intuitive system that simplifies order and customer management while maintaining scalability.",
+        solution: "We developed a streamlined UI using Vue, JavaScript, Bootstrap, and SCSS to ensure a responsive and efficient workflow for photography service providers."
+    },
+    {
+        title: "Number Wise",
+        description: "A web-based platform for learn and play numbers game from anywhere and anytime.",
+        technologies: ["React", "TypeScript", "Tailwind"],
+        year: "2024",
+        type: "Web Application",
+        logo: "/clients/5.png",
         images: [
             "/api/placeholder/800/600",
             "/api/placeholder/800/600",
