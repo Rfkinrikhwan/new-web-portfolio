@@ -53,7 +53,7 @@ export default function Index() {
       <div className="border my-4 border-dashed" />
 
       <div className="relative z-50">
-        <GitHubCalendar username="rfkinrikhwan" blockSize={10} colorScheme="light" year={2025}/>
+        <GitHubCalendar username="rfkinrikhwan" blockSize={10} colorScheme="light" year={2025} />
       </div>
 
       <div className="border my-4" />
