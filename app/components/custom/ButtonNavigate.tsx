@@ -1,6 +1,6 @@
 import { useLocation } from '@remix-run/react';
 import { motion, AnimatePresence } from 'framer-motion'
-import { Home, Leaf, Archive, Send } from 'lucide-react'
+import { Home, Leaf, Archive, Send, PencilLine } from 'lucide-react'
 import { Link } from 'react-router-dom';
 
 type ButtonNavigateProps = {
@@ -24,7 +24,7 @@ function ButtonNavigate({ path, label, icon }: ButtonNavigateProps) {
                     opacity: 0.7
                 }}
                 animate={{
-                    backgroundColor: checkCurrentLocation ? 'rgba(243, 244, 246, 0.5)' : 'transparent',
+                    backgroundColor: checkCurrentLocation ? 'rgba(245, 245, 245, 0.5)' : 'transparent',
                     scale: checkCurrentLocation ? 1.05 : 1,
                     opacity: checkCurrentLocation ? 1 : 0.7
                 }}
@@ -64,7 +64,7 @@ function ButtonNavigate({ path, label, icon }: ButtonNavigateProps) {
                                 stiffness: 300,
                                 damping: 20
                             }}
-                            className="overflow-hidden whitespace-nowrap ml-2 text-sm"
+                            className="overflow-hidden whitespace-nowrap text-sm hidden md:inline"
                         >
                             {label}
                         </motion.span>
@@ -75,7 +75,21 @@ function ButtonNavigate({ path, label, icon }: ButtonNavigateProps) {
     )
 }
 
-function NavigationContainer() {
+type NavigationContainerProps = {
+    showPaths?: string[];
+}
+
+function NavigationContainer({ showPaths = ['/', '/about', '/project', '/blog', '/contact'] }: NavigationContainerProps) {
+    const location = useLocation();
+
+    // Cek apakah path saat ini ada dalam daftar showPaths
+    const shouldHide = !showPaths.includes(location.pathname);
+
+    // Jika shouldHide true, return null (tidak render apapun)
+    if (shouldHide) {
+        return null;
+    }
+
     return (
         <motion.div
             transition={{
@@ -88,7 +102,7 @@ function NavigationContainer() {
             <ButtonNavigate label='Home' path='/' icon={<Home />} />
             <ButtonNavigate label='About' path='/about' icon={<Leaf />} />
             <ButtonNavigate label='Project' path='/project' icon={<Archive />} />
-            {/* <ButtonNavigate label='Blog' path='/blog' icon={<PencilLine />} /> */}
+            <ButtonNavigate label='Blog' path='/blog' icon={<PencilLine />} />
             <ButtonNavigate label='Contact' path='/contact' icon={<Send />} />
         </motion.div>
     )
