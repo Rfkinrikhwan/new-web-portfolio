@@ -20,7 +20,7 @@ export default function BlogList() {
         "Complete documentation about IoT project to control lights remotely using ESP32, Firebase Realtime Database, and sound sensor as an alternative control when offline.",
       tags: ["IoT", "ESP32", "Firebase", "Arduino"],
       slug: "kendali-lampu-jarak-jauh-esp32-firebase",
-      image: "/Thumbnail/IOT_ESP32_FIREBASE.jpg",
+      image: "/Thumbnail/IOT_ESP32_FIREBASE.png",
     },
   ]
 

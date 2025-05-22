@@ -51,7 +51,7 @@ export default function BlogPost() {
                 <div className="max-w-3xl mx-auto">
                     <div className="aspect-video relative rounded-xl overflow-hidden shadow-md">
                         <img
-                            src="/Thumbnail/IOT_ESP32_FIREBASE.jpg"
+                            src="/Thumbnail/IOT_ESP32_FIREBASE.png"
                             alt="ESP32 with Firebase and Sound Sensor"
                             className="object-cover w-full h-full"
                         />
@@ -170,15 +170,6 @@ export default function BlogPost() {
                                 system uses a debouncing algorithm to prevent unwanted activation due to noise or echoes.
                             </p>
                         </div>
-                    </div>
-
-                    <h2 className="text-2xl font-bold mt-8 mb-4">Circuit Diagram</h2>
-                    <div className="aspect-video relative rounded-lg overflow-hidden my-6 border border-gray-200">
-                        <img
-                            src="/Thumbnail/IOT_ESP32_FIREBASE.jpg"
-                            alt="Circuit Diagram of ESP32 with Relay and Sound Sensor"
-                            className="object-cover w-full h-full"
-                        />
                     </div>
 
                     <h2 className="text-2xl font-bold mt-8 mb-4">Program Code</h2>
