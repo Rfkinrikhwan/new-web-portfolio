@@ -25,7 +25,7 @@ export default function BlogList() {
   ]
 
   return (
-    <div className="container mx-auto px-4 sm:px-0 py-10 md:py-14">
+    <div className="container mx-auto px-4 sm:px-0 py-10 md:py-14 mb-36">
       <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-3 text-[#333]">My Blog</h1>
 
       <div className="flex items-center gap-5 mt-2 text-gray-500">
