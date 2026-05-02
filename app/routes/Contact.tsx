@@ -7,13 +7,15 @@ interface SocialLink {
 
 import React from 'react';
 import { MetaFunction } from "@remix-run/react";
-import { Github, Instagram, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import SendMessage from '~/components/custom/SendMessage';
+import LiquidGlass from "~/components/custom/LiquidGlass";
+import { useTheme } from "~/components/theme-provider";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: "Contact | Rifki" },
-        { name: "description", content: "Allo Guys, I'm Rifki" },
+        { title: "Contact | Rifki Nur Ikhwan" },
+        { name: "description", content: "Get in touch with Rifki Nur Ikhwan for collaborations, inquiries, or just to say hi. Reach out via email or connect on LinkedIn, GitHub, and Instagram." },
     ];
 };
 
@@ -45,6 +47,7 @@ const socialLinks: SocialLink[] = [
 ];
 
 export default function ContactPage() {
+    const { resolvedTheme } = useTheme();
 
     return (
         <div className="px-4 sm:px-0 py-10 md:py-14">
@@ -63,17 +66,23 @@ export default function ContactPage() {
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="z-10 flex items-center gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                                className="block outline-none group"
                             >
-                                <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
-                                    <link.icon className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <h3 className="font-medium">{link.name}</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                                        {link.username}
-                                    </p>
-                                </div>
+                                <LiquidGlass className="rounded-xl !w-full transition-transform duration-300 group-hover:scale-[1.02]" depth={6} strength={0} blur={12}>
+                                    <div className={`absolute inset-0 pointer-events-none rounded-xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]' : 'border-black/5 bg-black/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]'}`} />
+                                    
+                                    <div className="z-10 relative flex items-center gap-4 p-4 w-full text-left">
+                                        <div className="p-2 rounded-full glass-badge">
+                                            <link.icon className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium">{link.name}</h3>
+                                            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                                                {link.username}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </LiquidGlass>
                             </a>
                         ))}
                     </div>

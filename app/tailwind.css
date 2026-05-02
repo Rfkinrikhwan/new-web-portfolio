@@ -75,3 +75,404 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+.dark::view-transition-old(root) {
+  z-index: 2;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* ==============================
+   Liquid Glass Design System
+   ============================== */
+
+@layer base {
+  :root {
+    --c-glass: #bbbbbc;
+    --c-light: #fff;
+    --c-dark: #000;
+    --c-content: #224;
+    --c-action: #111;
+    --c-bg: #e8e8e9;
+    --glass-reflex-dark: 1;
+    --glass-reflex-light: 1;
+    --saturation: 150%;
+    --fz: 20px;
+  }
+
+  .dark {
+    --c-glass: #bbbbbc;
+    --c-light: #fff;
+    --c-dark: #000;
+    --c-content: #e1e1e1;
+    --c-action: #f0f0f0;
+    --c-bg: #1b1b1d;
+    --glass-reflex-dark: 2;
+    --glass-reflex-light: 0.3;
+    --saturation: 150%;
+  }
+
+  body {
+    background: var(--c-bg);
+    color: var(--c-content);
+    transition: background 400ms cubic-bezier(1, 0, 0.4, 1),
+      color 400ms cubic-bezier(1, 0, 0.4, 1);
+  }
+}
+
+/* ==============================
+   Liquid Glass Component Styles
+   (Heavy — SVG filter, use sparingly)
+   ============================== */
+
+.liquid-glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass-button {
+  transition: all 0.3s ease-out;
+  transform-origin: top center;
+  box-shadow: 0px 0px 1px white;
+}
+
+.liquid-glass-button:hover {
+  scale: 1.05;
+}
+
+.glass-box {
+  position: absolute;
+  inset: 0;
+}
+
+.glass-box.glass-black {
+  background: #09090b80;
+  box-shadow: inset 0 0 4px 0px #fafafa80;
+  filter: brightness(0.6);
+}
+
+.glass-box.glass-white {
+  background: #fafafa80;
+  box-shadow: inset 0 0 4px 0px #fafafa80;
+}
+
+.glass-box.glass-transparent {
+  background: #09090b00;
+  box-shadow: inset 0 0 4px 0px #fafafa80;
+}
+
+/* ==============================
+   CSS-Only Glass Utilities
+   (Lightweight — no SVG filters)
+   ============================== */
+
+.glass-card {
+  background-color: color-mix(in srgb, var(--c-glass) 10%, transparent);
+  backdrop-filter: blur(12px) saturate(var(--saturation));
+  -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--c-light) calc(var(--glass-reflex-light) * 15%),
+      transparent
+    );
+  box-shadow: inset 1px 1px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 40%),
+        transparent
+      ),
+    inset -1px -1px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 5%),
+        transparent
+      ),
+    0px 4px 16px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 6%),
+        transparent
+      );
+  transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1),
+    box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
+    border-color 400ms cubic-bezier(1, 0, 0.4, 1);
+}
+
+.glass-card:hover {
+  box-shadow: inset 1px 1px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 50%),
+        transparent
+      ),
+    inset -1px -1px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+        transparent
+      ),
+    0px 8px 24px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+        transparent
+      );
+}
+
+.glass-pill {
+  background-color: color-mix(in srgb, var(--c-glass) 8%, transparent);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--c-light) calc(var(--glass-reflex-light) * 12%),
+      transparent
+    );
+  box-shadow: inset 0.5px 0.5px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 30%),
+        transparent
+      ),
+    0px 2px 8px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 4%),
+        transparent
+      );
+  transition: all 400ms cubic-bezier(1, 0, 0.4, 1);
+}
+
+.glass-btn-primary {
+  background-color: color-mix(in srgb, var(--c-dark) 75%, transparent);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  color: #fff;
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--c-light) calc(var(--glass-reflex-light) * 10%),
+      transparent
+    );
+  box-shadow: inset 0px 1px 0px 0px
+      color-mix(in srgb, var(--c-light) 15%, transparent),
+    0px 2px 8px 0px color-mix(in srgb, var(--c-dark) 15%, transparent);
+  transition: all 300ms ease-out;
+  cursor: pointer;
+}
+
+.glass-btn-primary:hover {
+  background-color: color-mix(in srgb, var(--c-dark) 85%, transparent);
+  transform: translateY(-1px);
+  box-shadow: inset 0px 1px 0px 0px
+      color-mix(in srgb, var(--c-light) 20%, transparent),
+    0px 4px 16px 0px color-mix(in srgb, var(--c-dark) 20%, transparent);
+}
+
+.glass-btn-secondary {
+  background-color: color-mix(in srgb, var(--c-glass) 10%, transparent);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--c-light) calc(var(--glass-reflex-light) * 15%),
+      transparent
+    );
+  box-shadow: inset 0.5px 0.5px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 20%),
+        transparent
+      ),
+    0px 2px 8px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 4%),
+        transparent
+      );
+  transition: all 300ms ease-out;
+  cursor: pointer;
+}
+
+.glass-btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--c-glass) 18%, transparent);
+  transform: translateY(-1px);
+  box-shadow: inset 0.5px 0.5px 0px 0px
+      color-mix(
+        in srgb,
+        var(--c-light) calc(var(--glass-reflex-light) * 30%),
+        transparent
+      ),
+    0px 4px 12px 0px
+      color-mix(
+        in srgb,
+        var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+        transparent
+      );
+}
+
+.glass-badge {
+  background-color: color-mix(in srgb, var(--c-glass) 8%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--c-light) calc(var(--glass-reflex-light) * 10%),
+      transparent
+    );
+}
+
+/* ==============================
+   Bottom Navigation (.switcher)
+   ============================== */
+
+/* ==========================================================================
+   SLIDING DRAG DOCK STYLES
+   ========================================================================== */
+.dock-wrapper {
+  position: relative;
+  height: 80px;
+  z-index: 50;
+}
+
+.dock-track {
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  z-index: 1;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.dock-track-white {
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  /* box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1); */
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  z-index: 1;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.dock-track.active:active {
+  cursor: grabbing;
+}
+
+.dock-bubble-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 2px 5px rgba(255, 255, 255, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.dock-bubble-inner-white {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 2px 5px rgba(255, 255, 255, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dock-item {
+  width: 80px;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, color 0.3s ease;
+  background: transparent;
+  border: none;
+}
+
+.dock-item.active,
+.dock-item:hover {
+  opacity: 1;
+}
+
+.dock-item svg {
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dock-item span {
+  /* font-size: 11px;
+  font-weight: 800; */
+  letter-spacing: 0.05em;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.dock-item.active svg {
+  /* transform: scale(1.15) translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)); */
+}
+
+.dock-item.active span {
+  transform: translateY(2px);
+}
+
+/* Scrollbar utility */
+@layer components {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

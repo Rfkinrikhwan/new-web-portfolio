@@ -1,12 +1,13 @@
 import React from 'react'
-import { Card, CardContent } from '../ui/card'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
-import { Button } from '../ui/button'
 import { Send } from 'lucide-react'
 import { toast } from 'sonner'
+import LiquidGlass from './LiquidGlass'
+import { useTheme } from '../theme-provider'
 
 export default function SendMessage() {
+    const { resolvedTheme } = useTheme();
     const [isSubmitting, setIsSubmitting] = React.useState(false)
     const formRef = React.useRef<HTMLFormElement>(null)
 
@@ -50,12 +51,13 @@ export default function SendMessage() {
     return (
         <div>
             <h2 className="text-2xl font-semibold mb-6">Send Me a Message</h2>
-            <Card>
-                <CardContent className="pt-6">
+            <LiquidGlass className="rounded-2xl !w-full" depth={6} strength={0} blur={12}>
+                <div className={`absolute inset-0 pointer-events-none rounded-2xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]' : 'border-black/5 bg-black/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]'}`} />
+                <div className="z-10 relative p-6 w-full text-left">
                     <form 
                         ref={formRef}
                         onSubmit={handleSubmit} 
-                        className="space-y-4 z-50"
+                        className="space-y-4 z-50 relative"
                     >
                         <div className="grid gap-4">
                             <div className="grid grid-cols-2 gap-4">
@@ -68,6 +70,7 @@ export default function SendMessage() {
                                         name="name"
                                         placeholder="John Doe"
                                         required
+                                        className="bg-white/10 border-white/20 focus:border-white/40"
                                     />
                                 </div>
                                 <div className="space-y-2 z-50">
@@ -80,6 +83,7 @@ export default function SendMessage() {
                                         type="email"
                                         placeholder="john@example.com"
                                         required
+                                        className="bg-white/10 border-white/20 focus:border-white/40"
                                     />
                                 </div>
                             </div>
@@ -92,6 +96,7 @@ export default function SendMessage() {
                                     name="subject"
                                     placeholder="How can I help you?"
                                     required
+                                    className="bg-white/10 border-white/20 focus:border-white/40"
                                 />
                             </div>
                             <div className="space-y-2 z-50">
@@ -102,15 +107,15 @@ export default function SendMessage() {
                                     id="message"
                                     name="message"
                                     placeholder="Your message here..."
-                                    className="min-h-[120px]"
+                                    className="min-h-[120px] bg-white/10 border-white/20 focus:border-white/40"
                                     required
                                 />
                             </div>
                         </div>
 
-                        <Button
+                        <button
                             type="submit"
-                            className="w-full h-10 z-50 relative"
+                            className="w-full h-10 rounded-lg glass-btn-primary flex items-center justify-center gap-2 font-medium"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? (
@@ -118,13 +123,13 @@ export default function SendMessage() {
                             ) : (
                                 <>
                                     Send Message
-                                    <Send className="w-4 h-4 ml-2" />
+                                    <Send className="w-4 h-4" />
                                 </>
                             )}
-                        </Button>
+                        </button>
                     </form>
-                </CardContent>
-            </Card>
+                </div>
+            </LiquidGlass>
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import { ArrowLeft } from "lucide-react"
 import { Link, type MetaFunction } from "@remix-run/react"
+import LiquidGlass from "~/components/custom/LiquidGlass";
+import { useTheme } from "~/components/theme-provider";
 
 export const meta: MetaFunction = () => {
     return [
@@ -13,13 +15,15 @@ export const meta: MetaFunction = () => {
 }
 
 export default function BlogPost() {
+    const { resolvedTheme } = useTheme();
+
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen pb-20">
             {/* Navigation */}
             <div className="container mx-auto px-4 py-6">
                 <Link
                     to="/blog"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors hover:opacity-70"
                 >
                     <ArrowLeft size={16} />
                     <span>Back to Blog</span>
@@ -40,7 +44,7 @@ export default function BlogPost() {
                             ))}
                         </div>
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h1 className="text-3xl md:text-4xl font-bold mb-6">
                         Remote Light Control Using ESP32 and Firebase Realtime Database with Sound Sensor Integration
                     </h1>
                 </div>
@@ -51,8 +55,10 @@ export default function BlogPost() {
                 <div className="max-w-3xl mx-auto">
                     <div className="aspect-video relative rounded-xl overflow-hidden shadow-md">
                         <img
-                            src="/Thumbnail/IOT_ESP32_FIREBASE.png"
+                            src="/Thumbnail/IOT_ESP32_FIREBASE.webp"
                             alt="ESP32 with Firebase and Sound Sensor"
+                            width="800"
+                            height="450"
                             className="object-cover w-full h-full"
                         />
                     </div>
@@ -61,7 +67,7 @@ export default function BlogPost() {
 
             {/* Article Content */}
             <article className="container mx-auto px-4 pb-16">
-                <div className="max-w-3xl mx-auto prose prose-gray prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700">
+                <div className="max-w-3xl mx-auto prose prose-gray dark:prose-invert prose-headings:font-bold">
                     <h2 className="text-2xl font-bold mt-8 mb-4">Introduction</h2>
                     <p>
                         This project implements a remote light control system using the ESP32 microcontroller, Firebase Realtime
@@ -71,105 +77,122 @@ export default function BlogPost() {
                     </p>
 
                     <h2 className="text-2xl font-bold mt-8 mb-4">Required Components</h2>
-                    <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 my-6">
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                ESP32 Development Board
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Relay Module
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Sound Sensor Module
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Indicator LEDs (Red, Green, Blue)
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Jumper Wires
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Breadboard
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                5V Power Supply
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Light to be controlled
-                            </li>
-                        </ul>
+                    <div className="my-6">
+                        <LiquidGlass className="rounded-xl !w-full" depth={4} strength={0} blur={10}>
+                            <div className={`absolute inset-0 pointer-events-none rounded-xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5' : 'border-black/5 bg-black/5'}`} />
+                            <div className="z-10 relative p-6 w-full text-left">
+                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 m-0 p-0 list-none">
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        ESP32 Development Board
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Relay Module
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Sound Sensor Module
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Indicator LEDs (Red, Green, Blue)
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Jumper Wires
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Breadboard
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        5V Power Supply
+                                    </li>
+                                    <li className="flex items-center gap-2 m-0">
+                                        <span className="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Light to be controlled
+                                    </li>
+                                </ul>
+                            </div>
+                        </LiquidGlass>
                     </div>
 
                     <h2 className="text-2xl font-bold mt-8 mb-4">System Operation</h2>
 
                     <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-3">1. WiFi Connection with WiFi Manager</h3>
-                            <p>
-                                The first step in this system is connecting the ESP32 to a WiFi network. To simplify configuration, the
-                                system uses WiFi Manager, which allows users to set up WiFi credentials without modifying the program
-                                code.
-                            </p>
-                            <p className="mt-2">
-                                When the ESP32 is powered on, WiFi Manager will attempt to connect to the saved network. If no network
-                                is saved or it cannot connect, the ESP32 will create its own access point named "ESP32-Light-Control".
-                                Users can connect to this access point and access the configuration page at 192.168.4.1 to enter WiFi
-                                credentials.
-                            </p>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-3">2. Connection Indicators</h3>
-                            <p>The system includes indicator LEDs that show connection status:</p>
-                            <ul className="mt-2 space-y-2">
-                                <li className="flex items-start gap-2">
-                                    <div className="w-5 h-5 rounded-full bg-blue-500 mt-0.5 flex-shrink-0"></div>
-                                    <div>
-                                        <strong>Blue and Green LEDs on</strong>: ESP32 successfully connected to WiFi and Firebase Realtime
-                                        Database
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="w-5 h-5 rounded-full bg-red-500 mt-0.5 flex-shrink-0"></div>
-                                    <div>
-                                        <strong>Red LED on</strong>: ESP32 in offline mode (not connected to network)
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-3">3. Control via Mobile Application</h3>
-                            <p>
-                                When the ESP32 is connected to WiFi and Firebase, users can control the light through the provided
-                                mobile application. This application communicates with the Firebase Realtime Database, which then sends
-                                commands to the ESP32.
-                            </p>
-                            <div className="bg-gray-50 p-4 rounded-md my-4">
-                                <p className="font-medium">Application Link:</p>
-                                <p className="text-gray-600"><a href="https://drive.google.com/file/d/1zvGzn881B87mtMSsYojWyprpu1lrDqp1/view?usp=drive_link">Donwload Here</a></p>
+                        <LiquidGlass className="rounded-xl !w-full" depth={4} strength={0} blur={10}>
+                            <div className={`absolute inset-0 pointer-events-none rounded-xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5' : 'border-black/5 bg-black/5'}`} />
+                            <div className="z-10 relative p-6 w-full text-left">
+                                <h3 className="text-xl font-semibold mb-3 mt-0">1. WiFi Connection with WiFi Manager</h3>
+                                <p className="mt-0">
+                                    The first step in this system is connecting the ESP32 to a WiFi network. To simplify configuration, the
+                                    system uses WiFi Manager, which allows users to set up WiFi credentials without modifying the program
+                                    code.
+                                </p>
+                                <p className="mt-2 mb-0">
+                                    When the ESP32 is powered on, WiFi Manager will attempt to connect to the saved network. If no network
+                                    is saved or it cannot connect, the ESP32 will create its own access point named "ESP32-Light-Control".
+                                    Users can connect to this access point and access the configuration page at 192.168.4.1 to enter WiFi
+                                    credentials.
+                                </p>
                             </div>
-                        </div>
+                        </LiquidGlass>
 
-                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
-                            <h3 className="text-xl font-semibold mb-3">4. Offline Mode with Sound Sensor</h3>
-                            <p>
-                                If the ESP32 cannot connect to the WiFi network, the system will automatically switch to offline mode.
-                                In this mode, the indicator LED will turn red, and the light can be controlled using the sound sensor.
-                            </p>
-                            <p className="mt-2">
-                                The sound sensor will detect claps or other loud sounds. One clap will toggle the light on or off. The
-                                system uses a debouncing algorithm to prevent unwanted activation due to noise or echoes.
-                            </p>
-                        </div>
+                        <LiquidGlass className="rounded-xl !w-full" depth={4} strength={0} blur={10}>
+                            <div className={`absolute inset-0 pointer-events-none rounded-xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5' : 'border-black/5 bg-black/5'}`} />
+                            <div className="z-10 relative p-6 w-full text-left">
+                                <h3 className="text-xl font-semibold mb-3 mt-0">2. Connection Indicators</h3>
+                                <p className="mt-0">The system includes indicator LEDs that show connection status:</p>
+                                <ul className="mt-2 space-y-2 list-none p-0">
+                                    <li className="flex items-start gap-2 m-0">
+                                        <div className="w-5 h-5 rounded-full bg-blue-500 mt-1 flex-shrink-0"></div>
+                                        <div>
+                                            <strong>Blue and Green LEDs on</strong>: ESP32 successfully connected to WiFi and Firebase Realtime
+                                            Database
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start gap-2 m-0">
+                                        <div className="w-5 h-5 rounded-full bg-red-500 mt-1 flex-shrink-0"></div>
+                                        <div>
+                                            <strong>Red LED on</strong>: ESP32 in offline mode (not connected to network)
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </LiquidGlass>
+
+                        <LiquidGlass className="rounded-xl !w-full" depth={4} strength={0} blur={10}>
+                            <div className={`absolute inset-0 pointer-events-none rounded-xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5' : 'border-black/5 bg-black/5'}`} />
+                            <div className="z-10 relative p-6 w-full text-left">
+                                <h3 className="text-xl font-semibold mb-3 mt-0">3. Control via Mobile Application</h3>
+                                <p className="mt-0">
+                                    When the ESP32 is connected to WiFi and Firebase, users can control the light through the provided
+                                    mobile application. This application communicates with the Firebase Realtime Database, which then sends
+                                    commands to the ESP32.
+                                </p>
+                                <div className="p-4 rounded-md my-4 border border-white/10 bg-black/5 dark:bg-white/5">
+                                    <p className="font-medium m-0">Application Link:</p>
+                                    <p className="m-0"><a href="https://drive.google.com/file/d/1zvGzn881B87mtMSsYojWyprpu1lrDqp1/view?usp=drive_link">Download Here</a></p>
+                                </div>
+                            </div>
+                        </LiquidGlass>
+
+                        <LiquidGlass className="rounded-xl !w-full" depth={4} strength={0} blur={10}>
+                            <div className={`absolute inset-0 pointer-events-none rounded-xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5' : 'border-black/5 bg-black/5'}`} />
+                            <div className="z-10 relative p-6 w-full text-left">
+                                <h3 className="text-xl font-semibold mb-3 mt-0">4. Offline Mode with Sound Sensor</h3>
+                                <p className="mt-0">
+                                    If the ESP32 cannot connect to the WiFi network, the system will automatically switch to offline mode.
+                                    In this mode, the indicator LED will turn red, and the light can be controlled using the sound sensor.
+                                </p>
+                                <p className="mt-2 mb-0">
+                                    The sound sensor will detect claps or other loud sounds. One clap will toggle the light on or off. The
+                                    system uses a debouncing algorithm to prevent unwanted activation due to noise or echoes.
+                                </p>
+                            </div>
+                        </LiquidGlass>
                     </div>
 
                     <h2 className="text-2xl font-bold mt-8 mb-4">Program Code</h2>

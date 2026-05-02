@@ -6,6 +6,18 @@
         "id": "root",
         "file": "root.tsx"
       },
+      "routes/blog.kendali-lampu-jarak-jauh-esp32-firebase": {
+        "file": "routes/blog.kendali-lampu-jarak-jauh-esp32-firebase.tsx",
+        "id": "routes/blog.kendali-lampu-jarak-jauh-esp32-firebase",
+        "path": "blog/kendali-lampu-jarak-jauh-esp32-firebase",
+        "parentId": "root"
+      },
+      "routes/project.$slug": {
+        "file": "routes/project.$slug.tsx",
+        "id": "routes/project.$slug",
+        "path": "project/:slug",
+        "parentId": "root"
+      },
       "routes/Contact": {
         "file": "routes/Contact.tsx",
         "id": "routes/Contact",
@@ -39,9 +51,9 @@
     }
   },
   "remixConfig": {
-    "appDirectory": "/home/rfkinrikhwan/Development/React Project/portfolio-v2/app",
+    "appDirectory": "/Users/mymac/Development/Remix/new-web-portfolio/app",
     "basename": "/",
-    "buildDirectory": "/home/rfkinrikhwan/Development/React Project/portfolio-v2/build",
+    "buildDirectory": "/Users/mymac/Development/Remix/new-web-portfolio/build",
     "future": {
       "v3_fetcherPersist": true,
       "v3_relativeSplatPath": true,
@@ -58,6 +70,18 @@
         "path": "",
         "id": "root",
         "file": "root.tsx"
+      },
+      "routes/blog.kendali-lampu-jarak-jauh-esp32-firebase": {
+        "file": "routes/blog.kendali-lampu-jarak-jauh-esp32-firebase.tsx",
+        "id": "routes/blog.kendali-lampu-jarak-jauh-esp32-firebase",
+        "path": "blog/kendali-lampu-jarak-jauh-esp32-firebase",
+        "parentId": "root"
+      },
+      "routes/project.$slug": {
+        "file": "routes/project.$slug.tsx",
+        "id": "routes/project.$slug",
+        "path": "project/:slug",
+        "parentId": "root"
       },
       "routes/Contact": {
         "file": "routes/Contact.tsx",

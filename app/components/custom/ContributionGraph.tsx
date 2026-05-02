@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-const ContributionGraph = ({ data }) => {
+const ContributionGraph = ({ data }: { data?: any }) => {
   // Helper function to get color based on contribution count
-  const getContributionColor = (count) => {
+  const getContributionColor = (count: number) => {
     if (count === 0) return 'bg-gray-800';
     if (count <= 3) return 'bg-green-900';
     if (count <= 6) return 'bg-green-700';
@@ -61,9 +61,9 @@ const ContributionGraph = ({ data }) => {
               
               {/* Grid */}
               <div className="flex gap-1">
-                {contributionData.map((week, weekIndex) => (
+                {contributionData.map((week: any[], weekIndex: number) => (
                   <div key={weekIndex} className="flex flex-col gap-1">
-                    {week.map((day, dayIndex) => (
+                    {week.map((day: any, dayIndex: number) => (
                       <div
                         key={`${weekIndex}-${dayIndex}`}
                         className={`w-3 h-3 rounded-sm ${getContributionColor(day.count)}`}
