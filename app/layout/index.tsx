@@ -10,7 +10,7 @@ interface LayoutCustomProps {
 export default function LayoutCustom({ children }: LayoutCustomProps) {
   const location = useLocation();
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);

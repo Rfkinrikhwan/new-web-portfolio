@@ -5,6 +5,7 @@ import { Download, Mail, BookOpen, Code2, Briefcase, Star } from "lucide-react";
 const GitHubCalendar = lazy(() => import('react-github-calendar'));
 import { useTheme } from "~/components/theme-provider";
 import LiquidGlass from "~/components/custom/LiquidGlass";
+import GroupChat from "~/components/custom/GroupChat";
 
 export const meta: MetaFunction = () => {
   return [
@@ -70,12 +71,12 @@ export default function Index() {
           <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-6 flex-1">
             <div className="relative mb-4 group">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-green-400 to-emerald-600 blur-md opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-              <img src="/rifki.webp" alt="Rifki" width="128" height="128" fetchpriority="high" className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/10 shadow-xl" />
+              <img src="/rifki.webp" alt="Rifki" width="128" height="128" className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/10 shadow-xl" />
               <div className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-[3px] border-[#09090b] dark:border-zinc-950" />
             </div>
             <h2 className="text-xl font-bold mt-2">Rifki Nur Ikhwan</h2>
             <div className="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-green-500/10 text-green-500 text-xs font-medium border border-green-500/20">
-              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" /> Available for work
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" /> Open to work
             </div>
           </div>
         </LiquidGlass>
@@ -154,8 +155,11 @@ export default function Index() {
           </div>
         </LiquidGlass>
 
+        <div className="md:col-span-3">
+          <GroupChat />
+        </div>
       </div>
-      <div className="mb-24" />
+      <div className="mb-48" />
     </div>
   );
 }
