@@ -24,7 +24,7 @@ export default function SendMessage() {
         }
 
         try {
-            const response = await fetch('send', {
+            const response = await fetch('/api/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -54,9 +54,9 @@ export default function SendMessage() {
             <LiquidGlass className="rounded-2xl !w-full" depth={6} strength={0} blur={12}>
                 <div className={`absolute inset-0 pointer-events-none rounded-2xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]' : 'border-black/5 bg-black/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]'}`} />
                 <div className="z-10 relative p-6 w-full text-left">
-                    <form 
+                    <form
                         ref={formRef}
-                        onSubmit={handleSubmit} 
+                        onSubmit={handleSubmit}
                         className="space-y-4 z-50 relative"
                     >
                         <div className="grid gap-4">
@@ -70,7 +70,7 @@ export default function SendMessage() {
                                         name="name"
                                         placeholder="John Doe"
                                         required
-                                        className="bg-white/10 border-white/20 focus:border-white/40"
+                                        className="bg-white/10 border-white/20 focus:border-white/40 h-12 rounded-xl"
                                     />
                                 </div>
                                 <div className="space-y-2 z-50">
@@ -83,7 +83,7 @@ export default function SendMessage() {
                                         type="email"
                                         placeholder="john@example.com"
                                         required
-                                        className="bg-white/10 border-white/20 focus:border-white/40"
+                                        className="bg-white/10 border-white/20 focus:border-white/40 h-12 rounded-xl"
                                     />
                                 </div>
                             </div>
@@ -96,7 +96,7 @@ export default function SendMessage() {
                                     name="subject"
                                     placeholder="How can I help you?"
                                     required
-                                    className="bg-white/10 border-white/20 focus:border-white/40"
+                                    className="bg-white/10 border-white/20 focus:border-white/40 h-12 rounded-xl"
                                 />
                             </div>
                             <div className="space-y-2 z-50">
@@ -107,7 +107,7 @@ export default function SendMessage() {
                                     id="message"
                                     name="message"
                                     placeholder="Your message here..."
-                                    className="min-h-[120px] bg-white/10 border-white/20 focus:border-white/40"
+                                    className="min-h-[120px] bg-white/10 border-white/20 focus:border-white/40 rounded-xl"
                                     required
                                 />
                             </div>
@@ -115,7 +115,7 @@ export default function SendMessage() {
 
                         <button
                             type="submit"
-                            className="w-full h-10 rounded-lg glass-btn-primary flex items-center justify-center gap-2 font-medium"
+                            className="w-full h-12 rounded-xl glass-btn-primary flex items-center justify-center gap-2 font-medium"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? (

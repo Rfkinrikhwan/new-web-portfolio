@@ -29,7 +29,7 @@ const ThemeIcon = ({ theme, size }: { theme: Theme, size: number }) => {
 export default function NavigationContainer() {
     const location = useLocation();
     const navigate = useNavigate();
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, resolvedTheme } = useTheme();
     const dragControls = useDragControls();
     const [isDragging, setIsDragging] = useState(false);
     const [dimensions, setDimensions] = useState({ itemWidth: 80, wrapperHeight: 80, pillHeight: 66, iconSize: 26, fontSize: '9px' });
@@ -71,7 +71,7 @@ export default function NavigationContainer() {
         { path: '/contact', label: 'Contact', icon: <Send size={iconSize} strokeWidth={2} />, type: 'link' },
         {
             path: '#theme',
-            label: theme === 'light' ? 'Light' : theme === 'dark' ? 'Dark' : 'Auto',
+            label: theme === 'light' ? 'Light' : theme === 'dark' ? 'Dark' : 'System',
             icon: <ThemeIcon theme={theme as Theme} size={iconSize} />,
             type: 'theme'
         },
@@ -111,7 +111,7 @@ export default function NavigationContainer() {
             <div className="dock-wrapper pointer-events-auto relative" style={{ height: wrapperHeight }}>
                 {/* 01. PRECISION LENS styled dock track background */}
                 <div
-                    className={`flex relative h-full px-[8px] items-center rounded-[40px] ${theme === 'dark' ? 'dock-track ' : 'dock-track-white'}`}
+                    className={`flex relative h-full px-[8px] items-center rounded-[40px] ${resolvedTheme === 'dark' ? 'dock-track ' : 'dock-track-white'}`}
                     onPointerDown={(e) => {
                         setIsDragging(true);
                         dragControls.start(e);
@@ -230,7 +230,7 @@ export default function NavigationContainer() {
                                 chromaticAberration={0}
                                 blur={10}
                             >
-                                <div className={`${theme === 'dark' ? 'dock-bubble-inner' : 'dock-bubble-inner-white'} pointer-events-none`} style={{ width: itemWidth, height: pillHeight }} />
+                                <div className={`${resolvedTheme === 'dark' ? 'dock-bubble-inner' : 'dock-bubble-inner-white'} pointer-events-none`} style={{ width: itemWidth, height: pillHeight }} />
                             </LiquidGlass>
                         </motion.div>
                     </motion.div>
@@ -259,7 +259,7 @@ export default function NavigationContainer() {
                         // ✅ key dipisah dari commonProps, tidak di-spread ke JSX
                         const commonProps = {
                             style: { width: itemWidth },
-                            className: `dock-item bg-transparent border-0 flex flex-col items-center justify-center gap-1 z-10 relative cursor-pointer outline-none transition-colors duration-300 ${theme === 'dark' ? 'text-white' : 'text-black'} ${isActive ? 'active' : ''}`,
+                            className: `dock-item bg-transparent border-0 flex flex-col items-center justify-center gap-1 z-10 relative cursor-pointer outline-none transition-colors duration-300 ${resolvedTheme === 'dark' ? 'text-white' : 'text-black'} ${isActive ? 'active' : ''}`,
                             'aria-label': item.label,
                             'aria-current': isActive ? ('page' as const) : undefined,
                         };
