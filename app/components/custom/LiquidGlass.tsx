@@ -87,9 +87,18 @@ export default function LiquidGlass({
           chromaticAberration,
         })}') blur(${blur}px) brightness(${brightness}) saturate(${saturate})`;
       } else {
-        // Fallback for browsers that don't support url() in backdrop-filter
-        (filterLayer.style as any)['-webkit-backdrop-filter'] =
-          `blur(${width / 10}px) saturate(180%)`;
+        // Fallback for iOS/WebKit/Safari which doesn't support url() in backdrop-filter
+        const fallbackBlur = blur > 0 ? blur : 12;
+        const fallbackFilter = `blur(${fallbackBlur}px) brightness(${brightness * 1.1}) saturate(${saturate * 1.2})`;
+        
+        filterLayer.style.backdropFilter = fallbackFilter;
+        // @ts-ignore
+        filterLayer.style.webkitBackdropFilter = fallbackFilter;
+        
+        // Add a subtle noise texture to simulate material depth since we can't do refraction
+        filterLayer.style.backgroundImage = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`;
+        filterLayer.style.backgroundRepeat = 'repeat';
+        filterLayer.style.opacity = '0.03';
       }
     }
 
