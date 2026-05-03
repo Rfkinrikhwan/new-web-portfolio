@@ -22,7 +22,7 @@ export default function BlogList() {
         "Complete documentation about IoT project to control lights remotely using ESP32, Firebase Realtime Database, and sound sensor as an alternative control when offline.",
       tags: ["IoT", "ESP32", "Firebase", "Arduino"],
       slug: "kendali-lampu-jarak-jauh-esp32-firebase",
-      image: "/Thumbnail/IOT_ESP32_FIREBASE.webp",
+      image: "https://assets.rfkinrikhwan.my.id/thumbnails/IOT_ESP32_FIREBASE.webp",
     },
   ]
 
@@ -47,23 +47,23 @@ export default function BlogList() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         {blogPosts.map((post) => (
           <article key={post.id} className="group">
-            <Link 
-              to={`/blog/${post.slug}`} 
+            <Link
+              to={`/blog/${post.slug}`}
               className="block outline-none"
               aria-label={`Read full article: ${post.title}`}
             >
               <LiquidGlass className="rounded-2xl !w-full" depth={6} strength={0} blur={12}>
                 <div className={`absolute inset-0 pointer-events-none rounded-2xl border ${resolvedTheme === 'dark' ? 'border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]' : 'border-black/5 bg-black/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]'}`} />
                 <div className="z-10 relative flex flex-col space-y-4 p-4 w-full text-left">
-                    <div className="aspect-video relative rounded-lg overflow-hidden">
-                      <img
-                        src={post.image || "/placeholder.svg"}
-                        alt={post.title}
-                        width="400"
-                        height="225"
-                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
+                  <div className="aspect-video relative rounded-lg overflow-hidden">
+                    <img
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      width="400"
+                      height="225"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
 
                   <div className="flex flex-col space-y-2">
                     <div className="flex items-center gap-2 text-sm text-gray-500">

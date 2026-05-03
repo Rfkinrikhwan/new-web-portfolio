@@ -14,24 +14,24 @@ export const meta: MetaFunction = () => {
 };
 
 const skills = [
-    { "name": "JavaScript", "icon": "/Skills/javascript.webp" },
-    { "name": "TypeScript", "icon": "/Skills/typescript.webp" },
-    { "name": "PHP", "icon": "/Skills/php.webp" },
-    { "name": "Laravel", "icon": "/Skills/laravel.webp" },
-    { "name": "React JS", "icon": "/Skills/react.webp" },
-    { "name": "React Native", "icon": "/Skills/reactnative.webp" },
-    { "name": "Vue JS", "icon": "/Skills/vue.webp" },
-    { "name": "Remix JS", "icon": "/Skills/remix.webp" },
-    { "name": "Tailwind", "icon": "/Skills/tailwind.webp" },
-    { "name": "Bootstrap", "icon": "/Skills/bootstrap.webp" },
+    { "name": "JavaScript", "icon": "https://assets.rfkinrikhwan.my.id/skills/javascript.webp" },
+    { "name": "TypeScript", "icon": "https://assets.rfkinrikhwan.my.id/skills/typescript.webp" },
+    { "name": "PHP", "icon": "https://assets.rfkinrikhwan.my.id/skills/php.webp" },
+    { "name": "Laravel", "icon": "https://assets.rfkinrikhwan.my.id/skills/laravel.webp" },
+    { "name": "React JS", "icon": "https://assets.rfkinrikhwan.my.id/skills/react.webp" },
+    { "name": "React Native", "icon": "https://assets.rfkinrikhwan.my.id/skills/reactnative.webp" },
+    { "name": "Vue JS", "icon": "https://assets.rfkinrikhwan.my.id/skills/vue.webp" },
+    { "name": "Remix JS", "icon": "https://assets.rfkinrikhwan.my.id/skills/remix.webp" },
+    { "name": "Tailwind", "icon": "https://assets.rfkinrikhwan.my.id/skills/tailwind.webp" },
+    { "name": "Bootstrap", "icon": "https://assets.rfkinrikhwan.my.id/skills/bootstrap.webp" },
 ]
 
 const tools = [
-    { "name": "Github", "icon": "/Skills/github.webp" },
-    { "name": "Postman", "icon": "/Skills/postman.webp" },
-    { "name": "Herd", "icon": "/Skills/herd.webp" },
-    { "name": "Vite", "icon": "/Skills/vite.webp" },
-    { "name": "Expo", "icon": "/Skills/expo.webp" },
+    { "name": "Github", "icon": "https://assets.rfkinrikhwan.my.id/skills/github.webp" },
+    { "name": "Postman", "icon": "https://assets.rfkinrikhwan.my.id/skills/postman.webp" },
+    { "name": "Herd", "icon": "https://assets.rfkinrikhwan.my.id/skills/herd.webp" },
+    { "name": "Vite", "icon": "https://assets.rfkinrikhwan.my.id/skills/vite.webp" },
+    { "name": "Expo", "icon": "https://assets.rfkinrikhwan.my.id/skills/expo.webp" },
 ]
 
 export default function AboutPage() {

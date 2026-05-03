@@ -55,9 +55,15 @@ export default function Index() {
               team player dedicated to delivering efficient, scalable, and visually appealing web applications.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
-              <button className="glass-btn-primary rounded-full px-6 py-2.5 flex items-center gap-2 text-sm font-medium">
+              <a
+                href="https://assets.rfkinrikhwan.my.id/CV_RIFKI_NUR_IKHWAN.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-btn-primary rounded-full px-6 py-2.5 flex items-center gap-2 text-sm font-medium"
+              >
                 <Download size={16} /> Download CV
-              </button>
+              </a>
               <button onClick={() => navigate('/contact')} className="glass-btn-secondary rounded-full px-6 py-2.5 flex items-center gap-2 text-sm font-medium">
                 <Mail size={16} /> Contact Me
               </button>
@@ -71,7 +77,7 @@ export default function Index() {
           <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-6 flex-1">
             <div className="relative mb-4 group">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-green-400 to-emerald-600 blur-md opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-              <img src="/rifki.webp" alt="Rifki" width="128" height="128" className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/10 shadow-xl" />
+              <img src="https://assets.rfkinrikhwan.my.id/rifki.webp" alt="Rifki" width="128" height="128" className="relative w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/10 shadow-xl" />
               <div className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-[3px] border-[#09090b] dark:border-zinc-950" />
             </div>
             <h2 className="text-xl font-bold mt-2">Rifki Nur Ikhwan</h2>
@@ -89,7 +95,7 @@ export default function Index() {
             <div className="flex items-center gap-5 flex-1">
               {/* Swift Logo */}
               <div className="relative flex-shrink-0">
-                <img src="/Skills/swift.webp" alt="Swift" width="112" height="112" className="w-28 h-28 rounded-xl" />
+                <img src="https://assets.rfkinrikhwan.my.id/skills/swift.webp" alt="Swift" width="112" height="112" className="w-28 h-28 rounded-xl" />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">

@@ -32,16 +32,16 @@ export default function NavigationContainer() {
     const { theme, setTheme, resolvedTheme } = useTheme();
     const dragControls = useDragControls();
     const [isDragging, setIsDragging] = useState(false);
-    const [dimensions, setDimensions] = useState({ itemWidth: 80, wrapperHeight: 80, pillHeight: 66, iconSize: 26, fontSize: '9px' });
+    const [dimensions, setDimensions] = useState({ itemWidth: 68, wrapperHeight: 66, pillHeight: 54, iconSize: 20, fontSize: '10px' });
 
     useEffect(() => {
         const updateDimensions = () => {
             if (window.innerWidth < 400) {
-                setDimensions({ itemWidth: 58, wrapperHeight: 64, pillHeight: 52, iconSize: 18, fontSize: '10px' });
+                setDimensions({ itemWidth: 48, wrapperHeight: 54, pillHeight: 42, iconSize: 16, fontSize: '9px' });
             } else if (window.innerWidth < 640) {
-                setDimensions({ itemWidth: 64, wrapperHeight: 70, pillHeight: 56, iconSize: 20, fontSize: '11px' });
+                setDimensions({ itemWidth: 54, wrapperHeight: 60, pillHeight: 48, iconSize: 18, fontSize: '10px' });
             } else {
-                setDimensions({ itemWidth: 84, wrapperHeight: 80, pillHeight: 66, iconSize: 24, fontSize: '12px' });
+                setDimensions({ itemWidth: 68, wrapperHeight: 66, pillHeight: 54, iconSize: 20, fontSize: '10px' });
             }
         };
         updateDimensions();

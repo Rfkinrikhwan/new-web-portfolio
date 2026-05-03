@@ -55,7 +55,7 @@ export default function BlogPost() {
                 <div className="max-w-3xl mx-auto">
                     <div className="aspect-video relative rounded-xl overflow-hidden shadow-md">
                         <img
-                            src="/Thumbnail/IOT_ESP32_FIREBASE.webp"
+                            src="https://assets.rfkinrikhwan.my.id/thumbnails/IOT_ESP32_FIREBASE.webp"
                             alt="ESP32 with Firebase and Sound Sensor"
                             width="800"
                             height="450"
