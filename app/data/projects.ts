@@ -28,9 +28,9 @@ export const projects: Project[] = [
             "https://assets.rfkinrikhwan.my.id/project-showcase/masterjems/4.jpg",
             "https://assets.rfkinrikhwan.my.id/project-showcase/masterjems/5.jpg",
         ],
-        longDescription: `Masterjems is a comprehensive Therapy Clinic Management System designed to replace manual scheduling and record-keeping with a digital solution.\n\nKey modules include:\n• Therapist-Centric Booking System: Enabling real-time slot management to prevent scheduling conflicts.\n• Electronic Medical Record (EMR): Tracking longitudinal patient history, chief complaints, diagnosis, and digital informed consents.\n• Point of Sale (POS): Custom module for service packages, supporting bundled treatments, down payments, and split payment methods.\n• Role-based Dashboards: Tailored views for Therapists (queue and commission history) and Admins (financial reporting).`,
-        challenges: "Replacing traditional manual processes with a seamless digital workflow that accommodates complex therapy scheduling and historical patient data tracking.",
-        solution: "Engineered a robust system using Laravel 11 and Vue 3, featuring a custom POS and an intuitive EMR module to ensure data accuracy and operational efficiency."
+        longDescription: `Masterjems is a comprehensive Therapy Clinic Management System designed to replace manual scheduling and record-keeping with a digital solution. Therapy clinics in Indonesia often rely on handwritten schedules and paper records, creating chaos in appointment management and patient history tracking. The system covers three core pillars: a therapist-centric booking engine, an electronic medical record module for longitudinal patient history, and a custom POS supporting bundled treatments and split payments. A separate patient-facing portal was also built, allowing patients to independently book sessions and choose their preferred therapist based on real-time availability.`,
+        challenges: "Replacing traditional manual processes with a seamless digital workflow that accommodates complex therapy scheduling, historical patient data tracking, and a self-service booking experience for patients.",
+        solution: "Engineered a role-based system using Laravel 11 and Vue 3, where each user — patient, therapist, admin, and owner — interacts with the same data through a tailored interface. Built a real-time availability engine, an intuitive EMR module, and a custom POS to ensure data accuracy and operational efficiency."
     },
     {
         slug: "sikapsu",
@@ -49,9 +49,9 @@ export const projects: Project[] = [
             "https://assets.rfkinrikhwan.my.id/project-showcase/sikapsu/6.jpg",
             "https://assets.rfkinrikhwan.my.id/project-showcase/sikapsu/7.jpg",
         ],
-        longDescription: `SIKAPSU is a web application developed for maritime vessel licensing management. It streamlines the verification process to help authorities process maritime documents more efficiently.\n\nMain features include:\n• Vessel licensing management\n• Application submissions for new licenses\n• Regional master data management\n• Deletion requests and data auditing`,
-        challenges: "Managing complex maritime documentation and ensuring a fast, reliable verification workflow for government authorities.",
-        solution: "Utilized the combination of Laravel and Svelte.js to create a highly responsive interface and a scalable backend capable of handling sensitive maritime data."
+        longDescription: `SIKAPSU is a web application developed for maritime vessel licensing management, helping government authorities process maritime documents more efficiently. The platform handles application submissions, vessel data, deletion requests, and regional master data in one centralized system.`,
+        challenges: "Maritime licensing involves sensitive, multi-step documentation that varies by vessel type and region. The existing manual process was slow and error-prone, requiring a digital solution that is both reliable and easy to use for non-technical government staff.",
+        solution: "Leveraged Laravel for a structured, secure backend and Svelte.js for a highly responsive frontend interface. Designed the system around the actual verification workflow used by authorities, minimizing the learning curve while significantly improving document processing speed."
     },
     // {
     //     slug: "nagata-admin",
@@ -104,9 +104,9 @@ export const projects: Project[] = [
             "https://assets.rfkinrikhwan.my.id/project-showcase/bridetobe/6.jpg",
             "https://assets.rfkinrikhwan.my.id/project-showcase/bridetobe/7.jpg",
         ],
-        longDescription: `Bridetobe.id is a comprehensive management application for rental businesses, specifically for clothing catalogs like dresses, suits, and shoes.\n\nKey features:\n• Full-stack management of clothing catalogs\n• Inventory tracking and stock management\n• Integrated rental booking system\n• Responsive interface for fast management experience`,
-        challenges: "Developing a responsive and efficient interface for managing diverse rental catalogs and tracking bookings in real-time.",
-        solution: "Leveraged the power of Inertia.js to bridge Laravel and React, providing a single-page application experience with the robustness of a traditional backend."
+        longDescription: `Bridetobe.id is a full-stack admin panel built for a wedding clothing rental business to manage their catalog, inventory, and booking system in one place. The platform covers dresses, suits, shoes, and accessories — each with their own stock tracking and rental booking flow. Built with a REST API architecture separating the Laravel backend from the React.js frontend.`,
+        challenges: "Managing a diverse rental catalog with multiple product categories, each requiring independent inventory tracking, while ensuring the booking system prevents double rentals and keeps stock data accurate in real-time.",
+        solution: "Built a RESTful API using Laravel as the backend and React.js as the frontend, enabling a clean and scalable separation of concerns. Implemented an inventory tracking system per product category and an integrated booking flow that automatically updates stock availability upon confirmation."
     },
     {
         slug: "numberwise",
@@ -147,9 +147,9 @@ export const projects: Project[] = [
             "https://assets.rfkinrikhwan.my.id/project-showcase/shanrise-web-admin/7.jpg",
             "https://assets.rfkinrikhwan.my.id/project-showcase/shanrise-web-admin/8.jpg",
         ],
-        longDescription: `Shanrise Web Admin is the back-office management platform for the Shanrise e-learning institution. It provides comprehensive tools for administrators to manage all aspects of the institution's operations.\n\nKey features:\n• Class & Student Management: Assign students to classes, manage enrollment, and track academic progress.\n• Exam Management: Create, configure, and assign CBT exams to specific classes and schedules.\n• Digital Signature Verification: Authenticate official documents and certificates directly within the platform.\n• Online Registration Workflow: Seamlessly integrates new student data into the system.\n• Financial Module (Cash Book): Tracks institution expenses and income for daily operations.`,
-        challenges: "Building a scalable admin platform that can handle complex relationships between classes, students, exams, and financial records while keeping the UI intuitive for non-technical administrators.",
-        solution: "Used React with TypeScript and Vite for a blazing-fast admin interface, coupled with a robust Laravel backend for secure data processing, document verification, and role-based access control."
+        longDescription: `Shanrise Web Admin is the back-office management platform for Shanrise, a psychology tutoring institution. It provides tools for administrators to manage classes, students, exams, financial records, and official document verification — all within a single platform built and maintained over 3 years.`,
+        challenges: "Building a long-running platform that scales with the institution's growing needs — from basic student management to complex features like digital signature verification and a financial cash book — while keeping the UI intuitive for non-technical administrators.",
+        solution: "Used React with TypeScript and Vite for a fast, maintainable frontend, paired with a Laravel backend for secure data processing and role-based access control. The system was iteratively developed over 3 years, with new modules added without disrupting existing workflows."
     },
     {
         slug: "shanrise-web-cbt",
@@ -169,9 +169,9 @@ export const projects: Project[] = [
             "https://assets.rfkinrikhwan.my.id/project-showcase/shanrise-web-cbt/7.jpg",
             "https://assets.rfkinrikhwan.my.id/project-showcase/shanrise-web-cbt/8.jpg",
         ],
-        longDescription: `Shanrise CBT is the student-facing exam platform built as part of the Shanrise e-learning ecosystem. It provides a secure and streamlined environment for students to take computer-based tests.\n\nKey features:\n• Structured Exam Interface: Clean, distraction-free UI optimized for focused test-taking.\n• Multiple Question Types: Supports various question formats including multiple choice and essay.\n• Automated Grading: Instant score calculation upon exam submission.\n• Exam Timer: Built-in countdown timer with auto-submit when time expires.\n• Result Dashboard: Students can review their answers and scores after completing an exam.`,
-        challenges: "Ensuring a stable, secure, and fair exam environment that prevents cheating while remaining accessible and responsive across different devices.",
-        solution: "Built a dedicated student-facing frontend using Vue 2 and Bootstrap, integrated with the same robust Laravel backend used by the Admin Panel to ensure synchronized data management and secure exam processing."
+        longDescription: `Shanrise CBT is the student-facing exam platform built as part of the Shanrise e-learning ecosystem. It provides a secure and streamlined environment for students to take computer-based tests with automated grading, built-in timers, and a post-exam result dashboard.`,
+        challenges: "Ensuring a stable, fair, and synchronized exam experience for students — where exam data, timing, and grading all need to stay in sync with the admin panel in real-time, even under concurrent usage.",
+        solution: "Built a dedicated student-facing frontend using Vue 2 and Bootstrap, tightly integrated with the same Laravel backend used by the admin panel. Implemented a countdown timer with auto-submit and an automated grading engine to deliver instant, accurate results upon exam completion."
     },
     {
         slug: "jdm-store",
